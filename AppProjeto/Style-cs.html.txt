@@ -1,0 +1,51 @@
+
+    <style type="text/css">
+
+    /* label focus color */
+    .input-field input:focus + label {
+      color: red !important;
+    }
+    /* label underline focus color */
+    .row .input-field input:focus {
+      border-bottom: 1px solid red !important;
+      box-shadow: 0 1px 0 0 red !important
+    }
+    #Pagina-home {
+      margin: 0 auto;
+      //width: 1150px;
+      //height: 11000px;
+      border: 1px solid #ccc;
+      border-radius: 1em;	
+      background-color:#CFCFCF;
+      font-weight: bold;
+    }
+    #fRetono {
+      background-color:black;
+    }
+    .input-field input:focus + label {
+      color: red !important;
+    }
+    #xLimpa {
+      font-size: auto;
+      //position: absolute;
+      //left: 930px;
+    }
+
+    #total, #itotal, #irestante{
+      color:red;
+    }
+    #iRetornoo {
+      //width: 1150px;
+      background-color: #F5F5DC;
+      border-radius: 8px;
+      border: 1px solid red;	
+    }
+    #idemo {
+      font-size: 8px;
+      text-transform: uppercase;
+    }
+    p {
+      indent-text: 10em;
+    }*/
+    </style>  
+

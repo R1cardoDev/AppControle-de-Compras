@@ -1,0 +1,85 @@
+    <script>
+      //Variavel grobal  - Gaveta de dados a ser enviado para planilha
+      const userInfo = {};
+      //========================================
+      /*Enventos de formulario-------------------------------------------------*/
+      document.getElementById("iquantidade").addEventListener("input",myItens);
+      document.getElementById("adicionar").addEventListener("click",fCarrega);
+      document.getElementById("xLinpa").addEventListener("click",fZerar);
+
+      //=================================
+      //Carregar lealt cupon
+      function fIniciar(){
+        var sCupon = "Id-Nome:_______Valor:_______Qtd:_______ Sub.Total:_______ Total:";
+        document.getElementById('idemo').innerHTML = sCupon;
+        
+        localStorage.removeItem("memoria");//zera memoria
+        localStorage.removeItem("totall");//sera memoria
+        document.getElementById('adicionar').disabled = true;
+        document.getElementById('irestante').focus();
+
+      }
+      //=================================
+      //Função de calculo de itens do inicio
+      function myItens(){
+        var nValor = Number(document.getElementById('ivalor').value);
+        var nQuantidade = Number(document.getElementById('iquantidade').value);
+        var nResult = nValor * nQuantidade;
+        document.getElementById('itotal').value = (nResult.toFixed(2));
+        document.getElementById('adicionar').disabled = false;
+        M.updateTextFields();
+        //document.getElementById('adicionar').focus();
+      }
+      //=================================
+      //Preencher cupon
+      function fCarrega(){
+      if (document.getElementById('ivalor').value != "" &  document.getElementById('produtos').value != "" ){
+        var sitens = Number(localStorage.getItem("memoria"));
+        var sTotal = Number(localStorage.getItem("totall"));
+        var sTela = document.getElementById('idemo').innerHTML;
+        var sProduto = document.getElementById('produtos').value;
+        var sValor = Number(document.getElementById('ivalor').value);
+        sValor = (sValor.toFixed(2));
+        var sQuantidade = Number(document.getElementById('iquantidade').value); 
+        var sSubTotal = document.getElementById('itotal').value;
+        var resultTotal =  Number(document.getElementById('itotal').value) + sTotal;
+        sTotal = (resultTotal.toFixed(2));
+        //--------------------------------
+        var sCartaao = Number(document.getElementById('irestante').value);
+        sCartaao = sCartaao - sSubTotal
+        document.getElementById('irestante').value = (sCartaao.toFixed(2));
+        document.getElementById('irestante').disabled = true;
+        //-------------------------------
+        document.getElementById('idemo').innerHTML = sTela + "<br>" + sitens + " => " + sProduto + "<br>" + " &emsp; &emsp; &emsp; &emsp;" + "R$ " + sValor + "&emsp; &emsp; &emsp;&emsp; &emsp; "+ sQuantidade + "&emsp; &emsp; &emsp; &emsp; &emsp;&emsp;  " + sSubTotal + "&emsp; &emsp; &emsp; &emsp; &emsp;&emsp; " + "R$ " + sTotal + "<hr>";
+        sitens = sitens + 1;
+        localStorage.setItem("memoria", sitens);
+        localStorage.setItem("totall", sTotal);
+      }
+      document.getElementById('adicionar').disabled = true;
+      //============Carregar Planilha Banco===========================================
+          //Gaveta de dados a ser enviado para planilha
+          userInfo.xProd = sProduto;
+          userInfo.xVal = sValor;
+          userInfo.xQuant = sQuantidade;
+          userInfo.xSubT = sSubTotal;
+          userInfo.xTotal = resultTotal;
+          fPonte();
+      //============Then End Sheets Banco============================================
+      fZerar();
+      }
+      //Transportador dados 
+      function fPonte(){
+        //Evento ponte
+        google.script.run.userCliecked(userInfo); 
+        return true;
+      }
+      //=================================
+      //zerar inputs
+      function fZerar(){
+        document.getElementById('produtos').value="";
+        document.getElementById('ivalor').value="";
+        document.getElementById('iquantidade').value="";
+        document.getElementById('itotal').value="";
+        document.getElementById('produtos').focus();
+      }
+    </script>

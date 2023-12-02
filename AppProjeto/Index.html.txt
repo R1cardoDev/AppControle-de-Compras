@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <base target="_self">
+    <title>Controle MERCADO</title>   
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    
+   <!-- <?!=include("Style-cs"); ?> -->         
+  </head>
+  <body class="light-blue lighten-5" onload="fIniciar();"> 
+    <div class="row">
+          <div class="card-content teal lighten-5 col s12">
+            <div class="row">
+              <div class="input-field large col s6">
+                <input id="irestante" type="number" >
+                <label for="SALDO DISPONIVEL:" onclick="document.getElementById('irestante').disabled = false;" >SALDO DISP. R$::</label>
+              </div>
+              <div class="input-field large col s6 ">
+                <input id="itotal" type="number" disabled>
+                <label for="TOTAL RESTANTE R$:">RETANSTE R$:</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="produtos" type="text"  >
+                <label for="NOME DO PRODUTO:">NOME PROD.:</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="ivalor" type="number" >
+                <label for="VALOR R$:">VALOR R$:</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="iquantidade" type="number" >
+                <label for="QUANTIDADE:">QUANTIDADE:</label>
+              </div>
+            </div>
+ 
+            <div class="row">
+             <div class="col s12 m12 l12">
+                <button class="waves-effect btn-large btn col s6" id="adicionar">Incluir
+                  <i class="large material-icons left">add_to_photos</i>
+                </button>
+                <button class="waves-effect btn-large btn col s6" id="xLinpa">Limpar
+                  <i class="large material-icons left">delete_forever</i>
+                </button>
+              </div>
+            </div>
+          </div>  
+          <div class="card-content orange lighten-5 col s12 ">
+            <div class="row">
+              <span id="idemo"></span>
+            </div>
+          </div>             
+        </div> 
+    </div>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     <?!=include("JavaScript-js"); ?>
+  </body>
+</html>
