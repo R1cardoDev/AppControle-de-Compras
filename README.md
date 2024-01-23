@@ -1,4 +1,4 @@
-# AppComtrole de Compras
+# AppControle de Compras
 Solução Inovadora para Gestão de Compras: O Seu Aliado Digital para Uma Experiência de Compra Aprimorada
 
 Bem-vindo ao nosso aplicativo online, uma ferramenta versátil projetada para simplificar e aprimorar a gestão das suas compras. Desenvolvido com foco principal em tornar a experiência de compras em mercados, atacados e estabelecimentos similares mais eficiente, nosso aplicativo oferece uma série de recursos inovadores para transformar a maneira como você organiza e acompanha suas despesas.
